@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class LifespanCountdown : MonoBehaviour
 {
-    public float lifeTimeInSeconds = 10f;
+    public float _lifespanInSeconds = 7f;
 
     //Starts the countdown when this object is created.
-    public bool countdownOnInstantiation;
+    public bool countdownOnInstantiation = true;
 
     //Start the countdown
     void Start()
@@ -19,7 +19,19 @@ public class LifespanCountdown : MonoBehaviour
 
     private IEnumerator LifeCountdown()
     {
-        yield return new WaitForSeconds(lifeTimeInSeconds);
+        yield return new WaitForSeconds(_lifespanInSeconds);
         Destroy(gameObject);
+    }
+
+    public LifespanCountdown(float lifespanInSeconds, bool startCountdownImmediatly)
+    {
+        _lifespanInSeconds = lifespanInSeconds;
+        countdownOnInstantiation = startCountdownImmediatly;
+    }
+
+    public LifespanCountdown()
+    {
+        _lifespanInSeconds = 7;
+        countdownOnInstantiation = true;
     }
 }

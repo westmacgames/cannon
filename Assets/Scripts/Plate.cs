@@ -19,10 +19,17 @@ public class Plate : MonoBehaviour
             //Random force vector
             rb.AddForce(new Vector3(Random.Range(-250, 250), Random.Range(-250, 250), Random.Range(-250, 250)));
         }
+
+        //Start a lifespan countdown for 7 seconds.
+        gameObject.AddComponent<LifespanCountdown>();
+
+        //Remove the parent. If the plate was inheriting any movement it no longer will.
+        transform.parent = null;
     }
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("Collision registered by " + other.name);
         if (other.CompareTag("Cannonball")) { Break(); }
     }
 }
