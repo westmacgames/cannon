@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WheelRotator : MonoBehaviour
+public class PlateWheel : MonoBehaviour
 {
     [Range(3, 10)]
     public float speed;
 
+    public List<Plate> plates;
     // Start is called before the first frame update
     void Start()
     {

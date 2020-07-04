@@ -29,7 +29,7 @@ public class Plate : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Collision registered by " + other.name);
+        //Debug.Log("Collision registered by " + other.name);
         if (other.CompareTag("Cannonball")) { Break(); }
     }
 }
