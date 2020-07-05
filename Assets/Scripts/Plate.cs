@@ -25,6 +25,8 @@ public class Plate : MonoBehaviour
 
         //Remove the parent. If the plate was inheriting any movement it no longer will.
         transform.parent = null;
+
+        GetComponent<SoundManager>().PlayRandomClip();
     }
 
     private void OnTriggerEnter(Collider other)
