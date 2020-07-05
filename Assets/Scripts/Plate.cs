@@ -9,10 +9,13 @@ public class Plate : MonoBehaviour
 
     public void Break()
     {
+        //Disable collider.
+        GetComponent<Collider>().enabled = false;
+
         //Activate broken plate, and remove regular.
         brokenPlate.SetActive(true);
-        plateObject.SetActive(false);
-        
+        plateObject.SetActive(false);    
+
         //Get every plate piece.
         foreach (Rigidbody rb in brokenPlate.GetComponentsInChildren<Rigidbody>())
         {

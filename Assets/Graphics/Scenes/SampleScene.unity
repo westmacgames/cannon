@@ -248,10 +248,10 @@ MonoBehaviour:
   cannonBall: {fileID: 3475403446648695984, guid: 1520773904bff8d44b651991baff20dc,
     type: 3}
   magn: 5.58
-  rough: 6.74
+  rough: 5.36
   fadeIn: 0
   fadeOut: 0.7
-  randomOffset: 0.225
+  randomOffset: 0.147
 --- !u!1 &462560789
 GameObject:
   m_ObjectHideFlags: 0

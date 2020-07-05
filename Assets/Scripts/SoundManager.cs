@@ -19,7 +19,7 @@ public class SoundManager : MonoBehaviour
     [Space]
 
     [SerializeField]
-    [Range(0, 1f)] float volume;
+    [Range(0, 1f)] float volume = 1f;
 
     private void Start()
     {
@@ -35,6 +35,7 @@ public class SoundManager : MonoBehaviour
 
     public void PlayRandomClip()
     {
+        Debug.Log("Sound omitted by:" + gameObject);
         src.clip = GetRandomClip();
         src.Play();
     }
