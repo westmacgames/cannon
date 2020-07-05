@@ -247,10 +247,11 @@ MonoBehaviour:
   shootPoint: {fileID: 1715150035}
   cannonBall: {fileID: 3475403446648695984, guid: 1520773904bff8d44b651991baff20dc,
     type: 3}
-  magn: 10.04
-  rough: 10.04
+  magn: 5.58
+  rough: 6.74
   fadeIn: 0
-  fadeOut: 1.07
+  fadeOut: 0.7
+  randomOffset: 0.225
 --- !u!1 &462560789
 GameObject:
   m_ObjectHideFlags: 0

@@ -114,6 +114,29 @@ namespace EZCameraShake
         }
 
         /// <summary>
+        /// Shake the camera once, fading in and out  over a specified durations.
+        /// </summary>
+        /// <param name="magnitude">The intensity of the shake.</param>
+        /// <param name="roughness">Roughness of the shake. Lower values are smoother, higher values are more jarring.</param>
+        /// <param name="fadeInTime">How long to fade in the shake, in seconds.</param>
+        /// <param name="fadeOutTime">How long to fade out the shake, in seconds.</param>
+        /// <returns>A CameraShakeInstance that can be used to alter the shake's properties.</returns>
+        public CameraShakeInstance ShakeOnceRand(float magnitude, float roughness, float fadeInTime, float fadeOutTime, float randOffset)
+        {
+            float randMag = Random.Range(magnitude - randOffset, magnitude + randOffset);
+            float randRough = Random.Range(roughness - randOffset, roughness + randOffset);
+            float randFadeIn = Random.Range(fadeInTime - randOffset, fadeInTime + randOffset);
+            float randFadeOut = Random.Range(fadeOutTime - randOffset, fadeOutTime + randOffset);
+
+            CameraShakeInstance shake = new CameraShakeInstance(randMag, randRough, randFadeIn, randFadeOut);
+            shake.PositionInfluence = DefaultPosInfluence;
+            shake.RotationInfluence = DefaultRotInfluence;
+            cameraShakeInstances.Add(shake);
+
+            return shake;
+        }
+
+        /// <summary>
         /// Shake the camera once, fading in and out over a specified durations.
         /// </summary>
         /// <param name="magnitude">The intensity of the shake.</param>
@@ -168,6 +191,7 @@ namespace EZCameraShake
             cameraShakeInstances.Add(shake);
             return shake;
         }
+
 
         /// <summary>
         /// Gets a copy of the list of current camera shake instances.

@@ -27,7 +27,11 @@ public class Cannon : MonoBehaviour
     [Range(5f, 15f)] public float rough;
     [Range(0.0f, 1.5f)] public float fadeIn;
     [Range(0.5f, 2f)] public float fadeOut;
-  
+    [Range(0.0f, 1.0f)] public float randomOffset;
+
+    [Header("Sound")]
+    [Space]
+    
     private CannonInput input;
     private void Awake()
     {
@@ -43,7 +47,7 @@ public class Cannon : MonoBehaviour
 
     void Shoot()
     {
-        CameraShaker.Instance.ShakeOnce(magn, rough, fadeIn, fadeOut);
+        CameraShaker.Instance.ShakeOnceRand(magn, rough, fadeIn, fadeOut, randomOffset);
         GameObject newCannonBall = Instantiate(cannonBall, shootPoint.position, Quaternion.identity);
         newCannonBall.GetComponent<Rigidbody>().AddForce(shootPoint.transform.forward * 100 * power);
     }
