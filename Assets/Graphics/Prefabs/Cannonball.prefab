@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da675ec2aa93b8c409873cb6bf4169dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _lifespanInSeconds: 7
+  _lifespanInSeconds: 4
   countdownOnInstantiation: 1
 --- !u!54 &3475403446648695990
 Rigidbody:
