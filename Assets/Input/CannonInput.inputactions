@@ -25,8 +25,8 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "d03efb9a-809f-4135-bfbc-db5477013cff",
-                    "path": "<Pointer>/delta",
+                    "id": "442e5021-a56a-45a5-ad1f-79dc78197526",
+                    "path": "<Mouse>/delta",
                     "interactions": "",
                     "processors": "",
                     "groups": "KBM",

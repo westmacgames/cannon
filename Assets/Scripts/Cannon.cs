@@ -39,24 +39,16 @@ public class Cannon : MonoBehaviour
         input.Game.Shoot.performed += ctx => Shoot();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     void Shoot()
     {
         CameraShaker.Instance.ShakeOnceRand(magn, rough, fadeIn, fadeOut, randomOffset);
         GameObject newCannonBall = Instantiate(cannonBall, shootPoint.position, Quaternion.identity);
         newCannonBall.GetComponent<Rigidbody>().AddForce(shootPoint.transform.forward * 100 * power);
-    }
 
-    void Look()
-    {
+        GetComponent<SoundManager>().PlayRandomClip();
 
     }
-
+    
     private void OnEnable() { input.Enable(); }
     private void OnDisable() { input.Disable(); }
 }

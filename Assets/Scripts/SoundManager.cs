@@ -11,23 +11,17 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public class SoundManager : MonoBehaviour
 {
+    AudioSource audioSource;
+
     [Header("Audio Files and Sources")]
-    AudioSource src = null;
     [SerializeField] List<AudioClip> clips = null;
 
-    [Header("Settings")]
-    [Space]
-
-    [SerializeField]
-    [Range(0, 1f)] float volume = 1f;
-
-    private void Start()
+    private void Awake()
     {
-        src = GetComponent<AudioSource>();
-        src.volume = volume;
+        audioSource = GetComponent<AudioSource>();
     }
-
-    AudioClip GetRandomClip()
+    
+    public AudioClip GetRandomClip()
     {
         if (clips.Count <= 0) { return null; }
         return clips[Random.Range(0, clips.Count)];
@@ -35,8 +29,7 @@ public class SoundManager : MonoBehaviour
 
     public void PlayRandomClip()
     {
-        Debug.Log("Sound omitted by:" + gameObject);
-        src.clip = GetRandomClip();
-        src.Play();
+        audioSource.clip = GetRandomClip();
+        audioSource.Play();
     }
 }
